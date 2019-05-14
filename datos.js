@@ -82,19 +82,30 @@ let guardarEnArchivo = (texto) => {
  * @param id: indica el id del curso
  * @param nombre: nombre de la persona a inscribir en el curso
  * @param cedula: cédula de la persona a inscribir en el curso
- * @return void
+ * @return mensaje: string con el mensaje del resultado
 */
 let inscribir = (idCurso, nombre, cedula) => {
 	let miCurso = buscarCurso(idCurso);
 	let mensaje = '';
 	if (miCurso)
 	{
-		mensaje = 'La persona ' + nombre + ' con cédula ' + cedula + ' fue inscrita en el curso ' + miCurso.nombre + '\n' + 'El curso ' + miCurso.nombre + ' con ID ' + miCurso.id + ' tiene una duración de ' + miCurso.duracion + ' horas y un costo de $' + miCurso.valor;
+		mensaje = 'La persona ' + nombre + ' con cédula ' + cedula + ' fue inscrita en el curso ' + miCurso.nombre + ' con ID ' + miCurso.id + ' con una duración de ' + miCurso.duracion + ' horas y un costo de $' + miCurso.valor;
 		guardarEnArchivo(mensaje);
 	}
 	else
 	{
 		mensaje = 'No se encuentra el curso con ID ' + idCurso;
+
+		//Muestro los cursos
+		verInfoCurso(1, 0, function(mensajeCallback){
+			console.log(mensajeCallback);
+		});
+		verInfoCurso(2, 0, function(mensajeCallback){
+			console.log(mensajeCallback);
+		});
+		verInfoCurso(3, 0, function(mensajeCallback){
+			console.log(mensajeCallback);
+		});
 	}
 	return mensaje;
 };

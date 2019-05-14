@@ -1,2 +1,0 @@
-La persona Sebast con cédula 1234 fue inscrita en el curso NodeJS
-El curso NodeJS con ID 1 tiene una duración de 36 horas y un costo de $0
