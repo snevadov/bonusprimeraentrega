@@ -45,10 +45,11 @@ const opciones = {
  * @param time_out: cantidad de segundos que debe esperar antes de imprimirlo
  * @return void
 */
-let verInfoCurso = (idCurso, time_out) => {
+let verInfoCurso = (idCurso, time_out, callback) => {
 	setTimeout(function(){
 		let miCurso = buscarCurso(idCurso);
-		console.log('El curso con ID ' + miCurso.id + ' de nombre ' + miCurso.nombre + ' tiene duración de ' + miCurso.duracion + ' horas y un valor de $' + miCurso.valor + '.');
+		let mensaje = 'El curso con ID ' + miCurso.id + ' de nombre ' + miCurso.nombre + ' tiene duración de ' + miCurso.duracion + ' horas y un valor de $' + miCurso.valor + '.';
+		callback(mensaje);
 	}, time_out*1000);
 };
 
@@ -73,7 +74,6 @@ let buscarCurso = (idCurso) => {
 let guardarEnArchivo = (texto) => {
 	fs.writeFile('inscritos.txt', texto, (err) => {
 		if(err) throw(err);
-		console.log('Se ha creado el archivo');
 	});
 };
 
