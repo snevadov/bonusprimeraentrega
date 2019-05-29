@@ -1,1 +1,0 @@
-La persona Se con cédula 12223333 fue inscrita en el curso PHP con ID 3 con una duración de 60 horas y un costo de $250000

@@ -65,19 +65,6 @@ let buscarCurso = (idCurso) => {
 };
 
 
-/*Defino la imprimir en el archivo 
- * @param id: indica el id del curso
- * @param nombre: nombre de la persona a inscribir en el curso
- * @param cedula: cédula de la persona a inscribir en el curso
- * @return void
-*/
-let guardarEnArchivo = (texto) => {
-	fs.writeFile('inscritos.txt', texto, (err) => {
-		if(err) throw(err);
-	});
-};
-
-
 /*Defino la función para inscribirse en el curso 
  * @param id: indica el id del curso
  * @param nombre: nombre de la persona a inscribir en el curso
@@ -90,7 +77,6 @@ let inscribir = (idCurso, nombre, cedula) => {
 	if (miCurso)
 	{
 		mensaje = 'La persona ' + nombre + ' con cédula ' + cedula + ' fue inscrita en el curso ' + miCurso.nombre + ' con ID ' + miCurso.id + ' con una duración de ' + miCurso.duracion + ' horas y un costo de $' + miCurso.valor;
-		guardarEnArchivo(mensaje);
 	}
 	else
 	{

@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/snevadov/bonusprimeraentrega/issues"
   },
-  "homepage": "https://github.com/snevadov/bonusprimeraentrega#readme"
+  "homepage": "https://github.com/snevadov/bonusprimeraentrega#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "yargs": "^13.2.4"
+  }
 }
