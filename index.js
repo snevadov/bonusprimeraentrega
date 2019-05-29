@@ -15,17 +15,17 @@ if(argv._[0]=='inscribir'){
 	console.log(respuesta);
 }
 else {
-	verInfoCurso(1,0, function(mensaje){
-		console.log(mensaje);
+	verInfoCurso(1,1,function(mensaje){
 		respuesta = respuesta + mensaje;
-	});
-	verInfoCurso(2,0, function(mensaje){
 		console.log(mensaje);
-		respuesta = respuesta + '</br>' + mensaje;
 	});
-	verInfoCurso(3,0, function(mensaje){
-		console.log(mensaje);
+	verInfoCurso(2,2,function(mensaje){
 		respuesta = respuesta + '</br>' + mensaje;
+		console.log(mensaje);
+	});
+	verInfoCurso(3,3,function(mensaje){
+		respuesta = respuesta + '</br>' + mensaje;
+		console.log(mensaje);
 	});
 }
 

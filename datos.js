@@ -46,11 +46,20 @@ const opciones = {
  * @return void
 */
 let verInfoCurso = (idCurso, time_out, callback) => {
-	setTimeout(function(){
+	if(time_out > 0)
+	{
+		setTimeout(function(){
+			let miCurso = buscarCurso(idCurso);
+			let mensaje = 'El curso con ID ' + miCurso.id + ' de nombre ' + miCurso.nombre + ' tiene duración de ' + miCurso.duracion + ' horas y un valor de $' + miCurso.valor + '.';
+			callback(mensaje);
+		}, time_out*1000);
+	}
+	else
+	{
 		let miCurso = buscarCurso(idCurso);
 		let mensaje = 'El curso con ID ' + miCurso.id + ' de nombre ' + miCurso.nombre + ' tiene duración de ' + miCurso.duracion + ' horas y un valor de $' + miCurso.valor + '.';
-		callback(mensaje);
-	}, time_out*1000);
+		return mensaje;
+	}
 };
 
 /*Defino la función para buscar en el curso 
@@ -73,27 +82,16 @@ let buscarCurso = (idCurso) => {
 */
 let inscribir = (idCurso, nombre, cedula) => {
 	let miCurso = buscarCurso(idCurso);
-	let mensaje = '';
+	let mensaje = "";
 	if (miCurso)
 	{
 		mensaje = 'La persona ' + nombre + ' con cédula ' + cedula + ' fue inscrita en el curso ' + miCurso.nombre + ' con ID ' + miCurso.id + ' con una duración de ' + miCurso.duracion + ' horas y un costo de $' + miCurso.valor;
 	}
 	else
 	{
-		mensaje = 'No se encuentra el curso con ID ' + idCurso;
-
-		//Muestro los cursos
-		verInfoCurso(1, 0, function(mensajeCallback){
-			console.log(mensajeCallback);
-		});
-		verInfoCurso(2, 0, function(mensajeCallback){
-			console.log(mensajeCallback);
-		});
-		verInfoCurso(3, 0, function(mensajeCallback){
-			console.log(mensajeCallback);
-		});
+		mensaje = 'No se encuentra el curso con ID ' + idCurso + '</br>\n' + verInfoCurso(1, 0) + '</br>\n' + verInfoCurso(2, 0) + '</br>\n' + verInfoCurso(3, 0);
 	}
-	
+
 	return mensaje;
 };
 
