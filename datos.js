@@ -93,6 +93,7 @@ let inscribir = (idCurso, nombre, cedula) => {
 			console.log(mensajeCallback);
 		});
 	}
+	
 	return mensaje;
 };
 
