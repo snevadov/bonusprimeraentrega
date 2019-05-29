@@ -1,14 +1,19 @@
 {
-  "name": "primeraentrega",
-  "version": "1.0.1",
-  "description": "Entrega número 1 de curso NodeJS",
-  "main": "entregable.js",
+  "name": "bonusprimeraentrega",
+  "version": "1.0.0",
+  "description": "Bonus de la primera entrega",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Sebastian snevadov@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snevadov/bonusprimeraentrega.git"
+  },
+  "author": "Sebastián snevadov@gmail.com",
   "license": "ISC",
-  "dependencies": {
-    "yargs": "^13.2.4"
-  }
+  "bugs": {
+    "url": "https://github.com/snevadov/bonusprimeraentrega/issues"
+  },
+  "homepage": "https://github.com/snevadov/bonusprimeraentrega#readme"
 }
